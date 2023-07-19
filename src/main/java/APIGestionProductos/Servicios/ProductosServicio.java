@@ -11,6 +11,6 @@ Productos obtenerProductoPorID(Long id);
 
 void guardarProducto (Productos productos);
 
-void eliminarProducto (Productos productos);
+void eliminarProducto (Long id);
 
 }

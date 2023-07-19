@@ -19,8 +19,10 @@ public class ProductosServicioImplementacion implements ProductosServicio {
 
     @Override
     public List<ProductosDTO> obtenerProductos() {
-        return productosRepositorio.findAll().stream().map(productos -> new ProductosDTO(productos)).collect(Collectors.toList());
+        List<Productos> productosLista = productosRepositorio.findAll();
+        return productosLista.stream().map(productos -> new ProductosDTO(productos)).collect(Collectors.toList());
     }
+
 
     @Override
     public Productos obtenerProductoPorID(Long id) {
@@ -33,8 +35,16 @@ public class ProductosServicioImplementacion implements ProductosServicio {
 
     }
 
+    /*@Override
+    public void eliminarProducto(Long id) {
+        productosRepositorio.delete(id);
+    }*/
+
     @Override
-    public void eliminarProducto(Productos productos) {
-        productosRepositorio.delete(productos);
+    public void eliminarProducto(Long id) {
+        Productos productoAEliminar = productosRepositorio.findById(id).orElse(null);
+        if (productoAEliminar != null) {
+            productosRepositorio.delete(productoAEliminar);
+        }
     }
 }

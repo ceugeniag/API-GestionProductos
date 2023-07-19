@@ -2,20 +2,20 @@ package APIGestionProductos.Controladores;
 
 import APIGestionProductos.DTO.ProductosDTO;
 import APIGestionProductos.Modelos.Productos;
-import APIGestionProductos.Repositorios.ProductosRepositorio;
 import APIGestionProductos.Servicios.ProductosServicio;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RestController
 public class ProductosControlador {
 
+    @Autowired
     private ProductosServicio productosServicio;
 
 
@@ -54,7 +54,7 @@ public class ProductosControlador {
     public ResponseEntity<Object> eliminarProducto(@PathVariable Long id){
         Productos productoAEliminar = productosServicio.obtenerProductoPorID(id);
         if (productoAEliminar != null){
-            productosServicio.eliminarProducto(productoAEliminar);
+            productosServicio.eliminarProducto(id);
             return new ResponseEntity<>("Producto eliminado exitosamente", HttpStatus.NO_CONTENT);
         } else  return new ResponseEntity<>("El producto no existe", HttpStatus.FORBIDDEN);
     }
