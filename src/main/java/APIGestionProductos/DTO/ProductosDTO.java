@@ -12,6 +12,8 @@ public class ProductosDTO {
     private int cantidad;
     private LocalDate fecha;
 
+    public ProductosDTO() {}
+
     public ProductosDTO(Productos productos) {
         this.id = productos.getId();
         this.nombre = productos.getNombre();
@@ -43,5 +45,25 @@ public class ProductosDTO {
 
     public LocalDate getFecha() {
         return fecha;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 }

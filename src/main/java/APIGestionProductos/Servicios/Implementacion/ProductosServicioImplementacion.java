@@ -44,7 +44,7 @@ public class ProductosServicioImplementacion implements ProductosServicio {
     public void eliminarProducto(Long id) {
         Productos productoAEliminar = productosRepositorio.findById(id).orElse(null);
         if (productoAEliminar != null) {
-            productosRepositorio.delete(productoAEliminar);
+            productosRepositorio.deleteById(id);
         }
     }
 }
