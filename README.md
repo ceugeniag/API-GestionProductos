@@ -2,9 +2,9 @@
 API-GestionProductos es un proyecto que ofrece un servicio de gestión de productos, permitiendo realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre una base de datos de productos.
 
 ## Requerimientos:
-Lenguaje: Java
-Framework: Spring
-Versionado: Git
+- Lenguaje: Java
+- Framework: Spring
+- Versionado: Git
 
 ## Instalacion:
 1) Clona el repositorio desde GitHub:
