@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "8752e8f5-7093-4d75-a54f-1be533099175",
+		"name": "API-GestionProductos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28634616"
+	},
+	"item": [
+		{
+			"name": "CREAR UN PRODUCTO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Pelota\",\n    \"descripcion\": \"Para jugar al futbol\",\n    \"precio\": 1000,\n    \"cantidad\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/productos"
+			},
+			"response": []
+		},
+		{
+			"name": "RETORNA LA LISTA DE PRODUCTOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/productos"
+			},
+			"response": []
+		},
+		{
+			"name": "RETORNA UN PRODUCTO POR ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/productos/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ELIMINAR UN PRODUCTO POR ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/productos/2"
+			},
+			"response": []
+		}
+	]
+}

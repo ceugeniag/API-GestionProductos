@@ -50,7 +50,7 @@ public class ProductosControlador {
     }
 
     //ELIMINAR UN PRODUCTO POR ID
-    @DeleteMapping("/producto/{id}")
+    @DeleteMapping("/productos/{id}")
     public ResponseEntity<Object> eliminarProducto(@PathVariable Long id){
         Productos productoAEliminar = productosServicio.obtenerProductoPorID(id);
         if (productoAEliminar != null){
